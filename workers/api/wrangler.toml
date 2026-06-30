@@ -29,7 +29,28 @@ database_id = "shopping-guide-db-local"
 preview_database_id = "DB"
 
 [env.production]
-name = "shopping-guide-api-production"
+name = "shopping-guide-api"
+
+[env.production.vars]
+NEXT_PUBLIC_API_BASE_URL = "https://shopping-guide-api.50a0bf3071b3047885affcc3ab23909f.workers.dev"
+ADMIN_TOKEN_EXPIRES_IN = "86400"
+
+[[env.production.kv_namespaces]]
+binding = "DEALS_CACHE"
+id = "2ad5f77f39324ac29c26ebd47056c129"
+
+[[env.production.kv_namespaces]]
+binding = "CONFIG_STORE"
+id = "c42dee9d221c4069b23735df7d7f74fa"
+
+[[env.production.kv_namespaces]]
+binding = "ADMIN_KV"
+id = "fa55e249bb4047c3be3a4c190078c02b"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "shopping-guide-db"
+database_id = "a3ae3f7e-f637-4425-b499-6112ed62adf7"
 
 [env.staging]
 name = "shopping-guide-api-staging"

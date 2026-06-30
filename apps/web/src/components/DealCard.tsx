@@ -32,7 +32,7 @@ export default function DealCard({ deal }: DealCardProps) {
       const [likeRes, favRes] = await Promise.all([
         api.like.status(deal.id).catch(() => ({ liked: false, likeCount: 0 })),
         api.favorite.status(deal.id).catch(() => ({ favorited: false })),
-      ]);
+      ]) as [{ liked: boolean; likeCount: number }, { favorited: boolean }];
       setLiked(likeRes.liked || false);
       setLikeCount(likeRes.likeCount || deal.likeCount || 0);
       setFavorited(favRes.favorited || false);
