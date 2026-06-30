@@ -1,0 +1,7 @@
+# Amazon PA API 配置
+# 从 Amazon Associates 后台获取
+AMAZON_ACCESS_KEY=
+AMAZON_SECRET_KEY=
+AMAZON_PARTNER_TAG=todaydeal-20
+AMAZON_REGION=us-east-1
+AMAZON_HOST=webservices.amazon.com
