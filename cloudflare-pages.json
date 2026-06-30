@@ -1,4 +1,0 @@
-{
-  "build_command": "pnpm build:web",
-  "build_output_dir": "apps/web/.next"
-}

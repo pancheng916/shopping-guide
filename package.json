@@ -20,5 +20,9 @@
     "db:setup": "pnpm run db:init && pnpm run db:seed",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "opennextjs-cloudflare": "^1.0.0"
   }
 }
