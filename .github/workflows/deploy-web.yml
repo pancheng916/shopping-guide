@@ -14,10 +14,6 @@ jobs:
   deploy:
     name: Deploy Web to Cloudflare Pages
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,13 +29,13 @@ jobs:
           version: '9'
 
       - name: Install dependencies
-        run: cd ../.. && pnpm install
+        run: pnpm install
 
       - name: Type Check
         run: pnpm typecheck
 
       - name: Build with Next.js
-        run: pnpm build
+        run: pnpm build:web
         env:
           NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
 
